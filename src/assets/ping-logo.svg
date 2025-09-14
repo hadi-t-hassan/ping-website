@@ -1,0 +1,25 @@
+<svg width="190" height="40" viewBox="0 0 190 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00A8CC;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Ping Logo Text with white fill and glow effect -->
+  <text x="10" y="28" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="white" filter="url(#glow)">
+    Ping
+  </text>
+  
+  <!-- Tech Symbol -->
+  <circle cx="160" cy="20" r="8" fill="url(#pingGradient)" opacity="0.3"/>
+  <circle cx="160" cy="20" r="4" fill="url(#pingGradient)"/>
+  <circle cx="160" cy="20" r="1.5" fill="white"/>
+</svg>
