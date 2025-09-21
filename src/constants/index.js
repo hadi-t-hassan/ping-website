@@ -35,6 +35,13 @@ import {
   telegram,
   twitter,
   yourlogo,
+  edtechsLogo,
+  getLogo,
+  ietLogo,
+  ridhaLogo,
+  sadiqLogo,
+  ayatLogo,
+  pingLogoPng,
 } from "../assets";
 
 export const navigation = [
@@ -69,7 +76,7 @@ export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
 
 export const notificationImages = [notification4, notification3, notification2];
 
-export const companyLogos = [];
+export const companyLogos = [edtechsLogo, getLogo, ietLogo, ridhaLogo, sadiqLogo, ayatLogo];
 
 export const PingServices = [
   "Website Development",

@@ -1,37 +1,38 @@
 import Section from "./Section";
 import Heading from "./Heading";
+import { edtechsLogo, getLogo, ietLogo, ridhaLogo, sadiqLogo, ayatLogo } from "../assets";
 
 const Clients = () => {
   const clientLogos = [
     {
       name: "EdTechS",
       description: "Syndicate of Educational Technology in Lebanon",
-      logo: "/src/assets/clients/edtechs-logo.png"
+      logo: edtechsLogo
     },
     {
       name: "GET",
       description: "Global Education & Technology",
-      logo: "/src/assets/clients/get-logo.png"
+      logo: getLogo
     },
     {
       name: "IET",
       description: "Interactive Education Technology",
-      logo: "/src/assets/clients/iet-logo.png"
+      logo: ietLogo
     },
     {
       name: "Al-Imam Al-Ridha",
       description: "High School",
-      logo: "/src/assets/clients/ridha-logo.png"
+      logo: ridhaLogo
     },
     {
       name: "Al-Imam Al-Sadiq",
       description: "International High School",
-      logo: "/src/assets/clients/sadiq-logo.png"
+      logo: sadiqLogo
     },
     {
       name: "Ayat Quranic Foundation",
       description: "Quranic Verses Authority",
-      logo: "/src/assets/clients/ayat-logo.png"
+      logo: ayatLogo
     }
   ];
 

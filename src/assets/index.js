@@ -77,6 +77,15 @@ import linkedin from "./socials/linkedin.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
 
+// Client logos
+import edtechsLogo from "./clients/edtechs-logo.png";
+import getLogo from "./clients/get-logo.png";
+import ietLogo from "./clients/iet-logo.png";
+import ridhaLogo from "./clients/ridha-logo.png";
+import sadiqLogo from "./clients/sadiq-logo.png";
+import ayatLogo from "./clients/ayat-logo.png";
+import pingLogoPng from "./clients/ping-logo.png";
+
 export {
   brainwave,
   pingLogo,
@@ -148,4 +157,11 @@ export {
   linkedin,
   telegram,
   twitter,
+  edtechsLogo,
+  getLogo,
+  ietLogo,
+  ridhaLogo,
+  sadiqLogo,
+  ayatLogo,
+  pingLogoPng,
 };
