@@ -21,18 +21,9 @@ const Services = () => {
         />
 
         <div className="relative">
-          <div className="relative z-1 flex items-center h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none md:w-3/5 xl:w-auto">
-              <img
-                className="w-full h-full object-cover md:object-right"
-                width={800}
-                alt="Smartest AI"
-                height={730}
-                src={service1}
-              />
-            </div>
-
-            <div className="relative z-1 max-w-[17rem] ml-auto">
+          <div className="relative z-1 flex flex-col md:flex-row md:items-center h-auto md:h-[39rem] mb-5 p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
+            {/* Text content - appears first on mobile, right side on desktop */}
+            <div className="relative z-1 w-full md:max-w-[17rem] md:ml-auto order-1 md:order-2 mb-8 md:mb-0">
               <h4 className="h4 mb-4">Web Development</h4>
               <p className="body-2 mb-[3rem] text-n-3">
                 Modern, responsive websites built with cutting-edge technologies
@@ -48,6 +39,17 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Image - appears second on mobile, left side on desktop */}
+            <div className="relative w-full md:absolute md:top-0 md:left-0 md:w-full md:h-full pointer-events-none md:w-3/5 xl:w-auto order-2 md:order-1">
+              <img
+                className="w-full h-[20rem] md:h-full object-cover md:object-right"
+                width={800}
+                alt="Smartest AI"
+                height={730}
+                src={service1}
+              />
             </div>
 
             <Generating className="absolute left-4 right-4 bottom-4 border-n-1/10 border lg:left-1/2 lg-right-auto lg:bottom-8 lg:-translate-x-1/2" />
