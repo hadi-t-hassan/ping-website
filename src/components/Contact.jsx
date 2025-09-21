@@ -1,17 +1,18 @@
 import Section from "./Section";
 import Heading from "./Heading";
 import Button from "./Button";
+import { gmailIcon, whatsappIcon } from "../assets";
 
 const Contact = () => {
   const contactInfo = [
     {
-      icon: "📧",
+      icon: gmailIcon,
       title: "Email",
       details: "pingtech.dev@gmail.com",
       link: "mailto:pingtech.dev@gmail.com"
     },
     {
-      icon: "📱",
+      icon: whatsappIcon,
       title: "WhatsApp",
       details: "+961 70 447 725",
       link: "https://wa.me/96170447725"
@@ -41,7 +42,13 @@ const Contact = () => {
               <div className="grid gap-6 md:grid-cols-2 max-w-2xl mx-auto">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="p-6 bg-n-7 rounded-2xl border border-n-1/10">
-                    <div className="text-4xl mb-4">{info.icon}</div>
+                    <div className="mb-4 flex justify-center">
+                      <img 
+                        src={info.icon} 
+                        alt={`${info.title} icon`}
+                        className="w-12 h-12 object-contain"
+                      />
+                    </div>
                     <h3 className="h4 mb-2">{info.title}</h3>
                     <p className="body-2 text-n-3 mb-4">{info.details}</p>
                     <Button 
