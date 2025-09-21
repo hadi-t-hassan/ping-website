@@ -36,9 +36,7 @@ const Header = () => {
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
         <a className="block w-[6rem] xl:mr-8" href="#hero">
-          <div className="bg-white rounded-lg p-1.5 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-            <img src="/src/assets/clients/ping-logo.png" width={80} height={20} alt="Ping" className="object-contain" />
-          </div>
+          <img src="/src/assets/clients/ping-logo.png" width={80} height={20} alt="Ping" className="object-contain" />
         </a>
 
         <nav
