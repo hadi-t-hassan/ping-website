@@ -2,8 +2,15 @@ import Section from "./Section";
 import Heading from "./Heading";
 import Button from "./Button";
 import { gmailIcon, whatsappIcon } from "../assets";
+import { motion } from "framer-motion";
+import { useScrollAnimation, fadeInUp, scaleIn, staggerContainer } from "../hooks/useScrollAnimation";
 
 const Contact = () => {
+  const { ref: contactRef, isInView: contactInView } = useScrollAnimation();
+  const { ref: contentRef, isInView: contentInView } = useScrollAnimation();
+  const { ref: cardsRef, isInView: cardsInView } = useScrollAnimation();
+  const { ref: whyChooseRef, isInView: whyChooseInView } = useScrollAnimation();
+
   const contactInfo = [
     {
       icon: gmailIcon,
@@ -28,63 +35,120 @@ const Contact = () => {
         />
 
         <div className="relative">
-          <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+          <motion.div 
+            ref={contactRef}
+            initial="hidden"
+            animate={contactInView ? "visible" : "hidden"}
+            variants={staggerContainer}
+            className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]"
+          >
             <div className="relative z-1 max-w-[50rem] mx-auto">
-              <h2 className="h2 mb-6">
+              <motion.h2 
+                variants={fadeInUp}
+                className="h2 mb-6"
+              >
                 Ready to Start Your Project?
-              </h2>
-              <p className="body-1 mb-8 text-n-2">
+              </motion.h2>
+              <motion.p 
+                variants={fadeInUp}
+                className="body-1 mb-8 text-n-2"
+              >
                 Let's discuss how we can help bring your digital vision to life. 
                 Our team is ready to provide expert consultation and deliver 
                 exceptional results for your business.
-              </p>
+              </motion.p>
               
-              <div className="grid gap-6 md:grid-cols-2 max-w-2xl mx-auto">
+              <motion.div 
+                ref={cardsRef}
+                initial="hidden"
+                animate={cardsInView ? "visible" : "hidden"}
+                variants={staggerContainer}
+                className="grid gap-6 md:grid-cols-2 max-w-2xl mx-auto"
+              >
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="p-6 bg-n-7 rounded-2xl border border-n-1/10">
-                    <div className="mb-4 flex justify-center">
+                  <motion.div 
+                    key={index} 
+                    variants={scaleIn}
+                    whileHover={{ 
+                      scale: 1.05, 
+                      y: -10,
+                      transition: { type: "spring", stiffness: 300 }
+                    }}
+                    className="p-6 bg-n-7 rounded-2xl border border-n-1/10 hover:shadow-lg transition-shadow duration-300"
+                  >
+                    <motion.div 
+                      className="mb-4 flex justify-center"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
                       <img 
                         src={info.icon} 
                         alt={`${info.title} icon`}
                         className="w-12 h-12 object-contain"
                       />
-                    </div>
+                    </motion.div>
                     <h3 className="h4 mb-2">{info.title}</h3>
                     <p className="body-2 text-n-3 mb-4">{info.details}</p>
-                    <Button 
-                      href={info.link} 
-                      className="w-full"
-                      white
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300 }}
                     >
-                      Contact via {info.title}
-                    </Button>
-                  </div>
+                      <Button 
+                        href={info.link} 
+                        className="w-full"
+                        white
+                      >
+                        Contact via {info.title}
+                      </Button>
+                    </motion.div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
-              <div className="mt-12 p-8 bg-n-7 rounded-2xl border border-n-1/10">
-                <h3 className="h3 mb-4">Why Choose Ping?</h3>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="flex items-start">
-                    <span className="text-color-1 mr-3">✓</span>
-                    <p className="body-2 text-n-2">Expert development team with years of experience</p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-color-1 mr-3">✓</span>
-                    <p className="body-2 text-n-2">Modern technologies and best practices</p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-color-1 mr-3">✓</span>
-                    <p className="body-2 text-n-2">Comprehensive security testing services</p>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-color-1 mr-3">✓</span>
-                    <p className="body-2 text-n-2">Professional training and support</p>
-                  </div>
-                </div>
-              </div>
+              <motion.div 
+                ref={whyChooseRef}
+                initial="hidden"
+                animate={whyChooseInView ? "visible" : "hidden"}
+                variants={staggerContainer}
+                className="mt-12 p-8 bg-n-7 rounded-2xl border border-n-1/10"
+              >
+                <motion.h3 
+                  variants={fadeInUp}
+                  className="h3 mb-4"
+                >
+                  Why Choose Ping?
+                </motion.h3>
+                <motion.div 
+                  variants={staggerContainer}
+                  className="grid gap-4 md:grid-cols-2"
+                >
+                  {[
+                    "Expert development team with years of experience",
+                    "Modern technologies and best practices",
+                    "Comprehensive security testing services",
+                    "Professional training and support"
+                  ].map((item, index) => (
+                    <motion.div 
+                      key={index}
+                      variants={fadeInUp}
+                      whileHover={{ x: 10, scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                      className="flex items-start hover:bg-n-6 p-2 rounded-lg transition-colors duration-300"
+                    >
+                      <motion.span 
+                        className="text-color-1 mr-3"
+                        whileHover={{ rotate: 360, scale: 1.2 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        ✓
+                      </motion.span>
+                      <p className="body-2 text-n-2">{item}</p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>
