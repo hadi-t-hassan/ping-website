@@ -86,21 +86,15 @@ const Services = () => {
                 height={730}
                 src={service1}
                 animate={{ 
-                  y: [0, -15, 0],
-                  x: [0, 5, 0],
-                  rotate: [0, 1, 0]
+                  y: [0, -10, 0],
+                  x: [0, 5, -5, 0],
                 }}
                 transition={{ 
-                  duration: 4,
+                  duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                whileHover={{ 
-                  scale: 1.08,
-                  x: 10,
-                  rotate: 2,
-                  transition: { duration: 0.3 }
-                }}
+                whileHover={{ scale: 1.05, x: [0, 8, -8, 0] }}
               />
             </motion.div>
 
@@ -133,22 +127,15 @@ const Services = () => {
                   width={630}
                   height={750}
                   alt="robot"
+                  whileHover={{ scale: 1.1, x: [0, -10, 10, 0] }}
                   animate={{ 
-                    x: [0, -8, 0],
-                    y: [0, -5, 0],
-                    scale: [1, 1.02, 1]
+                    x: [0, -5, 5, 0],
                   }}
                   transition={{ 
-                    duration: 5,
+                    duration: 4,
                     repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  whileHover={{ 
-                    scale: 1.15,
-                    x: -15,
-                    y: -10,
-                    rotate: -2,
-                    transition: { duration: 0.4 }
+                    ease: "easeInOut",
+                    hover: { duration: 0.5 }
                   }}
                 />
               </div>
@@ -159,9 +146,9 @@ const Services = () => {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-n-8/0 to-n-8/90 lg:p-15"
               >
-                <h4 className="h4 mb-4">Mobile Apps</h4>
+                <h4 className="h4 mb-4">Mobile App</h4>
                 <p className="body-2 mb-[3rem] text-n-3">
-                  App released successfully
+                  released successfully
                 </p>
               </motion.div>
 
@@ -228,22 +215,15 @@ const Services = () => {
                   width={520}
                   height={400}
                   alt="Scary robot"
+                  whileHover={{ scale: 1.05, x: [0, 10, -10, 0] }}
                   animate={{ 
-                    x: [0, 6, 0],
-                    y: [0, -8, 0],
-                    rotate: [0, -1, 0]
+                    x: [0, 8, -8, 0],
                   }}
                   transition={{ 
-                    duration: 6,
+                    duration: 3.5,
                     repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  whileHover={{ 
-                    scale: 1.1,
-                    x: 12,
-                    y: -8,
-                    rotate: 3,
-                    transition: { duration: 0.4 }
+                    ease: "easeInOut",
+                    hover: { duration: 0.5 }
                   }}
                 />
 

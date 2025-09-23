@@ -254,8 +254,8 @@ export const benefits = [
   },
   {
     id: "1",
-    title: "Mobile-First Apps",
-    text: "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.",
+    title: "Mobile-First App",
+    text: "released successfully",
     backgroundUrl: "./src/assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,

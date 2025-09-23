@@ -18,9 +18,9 @@ export const Gradient = () => {
 export const PhotoChatMessage = () => {
   return (
     <div className="absolute top-8 right-8 max-w-[17.5rem] py-6 px-8 bg-black rounded-t-xl rounded-bl-xl font-code text-base lg:top-16 lg:right-[8.75rem] lg:max-w-[17.5rem] animate-fade-in-up animation-delay-1000 hover:scale-105 transition-transform duration-300">
-      Mobile Apps
+      Mobile App
       <br />
-      Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.
+      released successfully
       <ChatBubbleWing className="absolute left-full bottom-0" />
     </div>
   );
